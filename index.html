@@ -27,12 +27,21 @@
    <div class="urlbox"><span>↗</span><input id="url" type="url" dir="ltr" placeholder="https://youtube.com/watch?v=..."><button id="paste">لصق الرابط</button></div>
    <p class="hint">●　دعم الروابط يعتمد على صلاحيات المنصة وإمكانية الوصول إلى الفيديو.</p>
    <div class="or"><span>أو</span></div>
-   <div class="upload"><span class="upload-icon">⇧</span><div><strong>ارفع ملف الفيديو من جهازك</strong><p>MP4 أو MOV أو WEBM — رفع الملفات سيُفعّل بعد إعداد خادم المعالجة.</p></div><button disabled>اختيار ملف قريباً</button></div>
-   <div class="actions"><label class="language">لغة الترجمة <select id="language"><option>العربية</option><option>Français</option><option>English</option><option>تلقائي</option></select></label><button class="primary" id="analyze" disabled>✧　حلّل الفيديو　←</button></div>
-   <div class="notice">ⓘ　هذه نسخة الواجهة الأولية. لم يتم ربط محرك تحليل أو تنزيل الفيديو بعد؛ لن ندّعي معالجة رابط قبل بناء الخادم والتكاملات الرسمية.</div>
+   <div class="upload" id="uploadBox"><span class="upload-icon">⇧</span><div><strong id="uploadLabel">ارفع ملف الفيديو من جهازك</strong><p>MP4 أو MOV أو WEBM أو MKV — حتى 500 ميجابايت.</p></div><button id="pickFile">اختيار ملف</button><input type="file" id="fileInput" accept="video/mp4,video/quicktime,video/webm,video/x-matroska" hidden></div>
+   <div class="actions">
+    <label class="language">لغة الترجمة <select id="language"><option>العربية</option><option>Français</option><option>English</option></select></label>
+    <label class="language">عدد المقاطع <select id="maxClips"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option></select></label>
+    <button class="primary" id="analyze" disabled>✧　حلّل الفيديو　←</button>
+   </div>
+   <div class="progress-wrap" id="progressWrap" hidden><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><p id="progressLabel">—</p></div>
+   <div class="notice" id="statusNotice">ⓘ　جارٍ التحقق من الاتصال بالخادم…</div>
+  </section>
+  <section class="card" id="results" hidden>
+   <div class="card-head"><span class="head-icon">▣</span><div><h2>المقاطع الناتجة</h2><p>نتائج حقيقية من التحليل والمعالجة.</p></div></div>
+   <div class="clips-grid" id="clipsGrid"></div>
   </section>
   <section class="features"><article><span class="ficon purple">✧</span><div><b>اكتشاف اللحظات</b><p>تحليل الكلام والإشارات المهمة</p></div></article><article><span class="ficon blue">▤</span><div><b>ترجمة تلقائية</b><p>عناوين وترجمة قابلة للتخصيص</p></div></article><article><span class="ficon green">✂</span><div><b>قص ذكي</b><p>مقاطع عمودية جاهزة للنشر</p></div></article></section>
-  <section class="empty" id="projects"><span>▣</span><div><b>مشاريعك ستظهر هنا</b><p>عندما نربط محرك المعالجة، ستجد فيديوهاتك ومقاطعك في مكان واحد.</p></div></section>
+  <section class="empty" id="projects"><span>▣</span><div><b>مشاريعك ستظهر هنا</b><p>عند انتهاء المعالجة، ستظهر نتائجك في قسم "المقاطع الناتجة" أعلاه.</p></div></section>
   <footer>© 2026 ClipGenius AI <span>صُنع للمبدعين، بواسطة الذكاء الاصطناعي.</span></footer>
  </div>
 </main><script src="script.js"></script>
